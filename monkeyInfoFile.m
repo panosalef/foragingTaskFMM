@@ -1,3 +1,8 @@
+%% monkeyInfoFile.m  -  session registry
+% One entry per session: animal, date (sessionId), stage ('Training' |
+% 'Recordings'), electrode configuration, brain areas and channels per area.
+% expParams(monkeyName, sessionId) looks sessions up here. Append new sessions
+% at the end of the animal's block.
 monkeyInfo = [];
 %% %%%%%%%%% %%
 %% Marco %%

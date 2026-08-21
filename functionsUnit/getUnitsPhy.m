@@ -1,4 +1,9 @@
 function  [sua,mua] = getUnitsPhy(prs)
+%GETUNITSPHY  Read Kilosort/Phy output from prs.sortedPath into unit structs.
+%   Returns single units (cluster group 'good') and multi units, each with
+%   spike times (samples), cluster/channel/electrode ids, brain area, mean
+%   waveform and quality metrics (uQ, cR, isiV).
+%   Requires readNPY (npy-matlab) on the path.
 spkTimes = readNPY([prs.sortedPath,'\','spike_times.npy']);
 clusterIds = readNPY([prs.sortedPath,'\','spike_clusters.npy']);
 clusterInfo = tdfread([prs.sortedPath,'\','cluster_info.tsv']);

@@ -1,4 +1,7 @@
 function addLfps(this,prs)
+%ADDLFPS  Read every Neuralynx channel, band-pass filter (prs.lfpMinFreq to
+%   prs.lfpMaxFreq), downsample to prs.srLfp, align to the behaviour clock and
+%   cut into trials (see readNlxChannel, lfp).
 
 electrodeId = mapChannel2Electrode(prs.electrodeConfig);
 [b,a] = butter(2,[prs.lfpMinFreq prs.lfpMaxFreq]/(prs.srNlx /2));

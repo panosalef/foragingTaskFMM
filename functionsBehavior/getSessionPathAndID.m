@@ -1,4 +1,6 @@
 function [sessionPath,sessionID] = getSessionPathAndID(monkeyName,datesList,sessionStage)
+%GETSESSIONPATHANDID  Session folder paths and ids from animal, dates, stage.
+%   Follows the naming convention <root>/<Monkey>/FMM/Data/<Stage>/<Monkey>_<yyyymmdd>.
 
 %% Generate session ID based on naming convention
 dateString = arrayfun(@(x) num2str(x,'%02d'),datesList,'UniformOutput',false);

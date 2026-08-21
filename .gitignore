@@ -1,0 +1,11 @@
+# MATLAB autosaves and temp
+*.asv
+*.m~
+*.mex
+.DS_Store
+# Data never lives in the repo
+*.mat
+*.beh
+*.ncs
+*.nev
+*.npy

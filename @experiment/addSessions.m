@@ -1,5 +1,14 @@
-%% function to add sessions
-function addSessions(this,monkeyName,sessionId,content) % e.g. content = {'behavior','lfps','units','population'}
+function addSessions(this,monkeyName,sessionId,content)
+%ADDSESSIONS  Import one session into the experiment.
+%   e.addSessions(monkeyName, sessionId, content) builds a session object,
+%   always imports behaviour, and optionally neural data:
+%     content  cellstr with any of 'lfps', 'units', 'population'
+%              e.g. {'behv','lfps'} or {'units','population'}
+%   sessionId may be numeric (yyyymmdd) or char. Re-adding an existing
+%   session asks before overwriting it.
+%
+%   See also experiment, expParams, session/addBehavior, session/addUnits,
+%   session/addLfps.
 sessionId = num2str(sessionId);
 islfps = any(strcmp(content,'lfps')); isunits = any(strcmp(content,'units')); ispop = any(strcmp(content,'population'));
 allsessions = this.sessions; oldInstance = find(strcmp(monkeyName,{allsessions.monkeyName}) & strcmp(sessionId,{allsessions.sessionId}));

@@ -1,5 +1,10 @@
 classdef lfp < handle
-    %%
+    %LFP  One LFP channel of a session.
+    %   Built by session/addLfps: the raw Neuralynx channel is band-pass
+    %   filtered, downsampled to prs.srLfp and aligned to the behaviour clock;
+    %   addTrials cuts it into trials, ITIs and the whole block.
+    %
+    %   See also readNlxChannel, addTrials2Lfp, session.
     properties
         channelId
         electrodeId

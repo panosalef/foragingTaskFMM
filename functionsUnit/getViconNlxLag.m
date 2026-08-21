@@ -1,7 +1,15 @@
-% clear,clc
-% path = 'Y:\Monkeys\Marco\FMM\Data\Recordings\Marco_20220104\Neural Recordings';
-% function getViconNlxLag(prs) % for the future
 function viconNlxLag = getViconNlxLag(neuralRawPath,viconPath)
+%GETVICONNLXLAG  Time offset between the Vicon and Neuralynx clocks, per block.
+%   viconNlxLag = getViconNlxLag(neuralRawPath, viconPath) reads the TTL
+%   events of the Neuralynx recording (Events.nev), rebuilds the random sync
+%   pulse train at 1 kHz, cross-correlates it with the same pulse recorded on
+%   the Vicon analog channel of each block, and returns the lag (s) that
+%   aligns each Vicon block to the neural clock. Subtract it from Neuralynx
+%   spike/LFP times to express them on the behaviour clock.
+%
+%   Output: 1 x nBlocks vector of lags in seconds.
+%
+%   See also session/addUnits, session/addLfps, unit.
 
 [TimeStamps, EventIDs, TTLs, Extras, EventStrings, Header2] = ...
     Nlx2MatEV([neuralRawPath,'\','Events.nev'], [1 1 1 1 1],1,1,1);

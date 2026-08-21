@@ -1,4 +1,7 @@
 function addUnits(this,prs)
+%ADDUNITS  Load Phy-sorted single and multi units, align them to the
+%   behaviour clock and cut their spikes into trials (see getUnitsPhy,
+%   getViconNlxLag, unit).
 
 viconNlxLag = getViconNlxLag(prs.neuralRawPath,prs.viconPath);
 [sua,mua] = getUnitsPhy(prs);

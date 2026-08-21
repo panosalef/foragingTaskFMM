@@ -1,4 +1,7 @@
 function  B = readBehFiles(blockPath)
+%READBEHFILES  Parse the task's .beh files (one per block) into a struct with
+%   schedules, cue reliability (kappa), push and reward times per box, reward
+%   rates and per-block counts.
 
 % Find files
 nSessions = numel(blockPath);

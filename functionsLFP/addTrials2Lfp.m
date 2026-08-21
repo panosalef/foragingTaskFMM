@@ -1,4 +1,6 @@
 function [trials,iti,block] = addTrials2Lfp(channel,trialsBeh,blockBeh,srLfp,viconNlxLag)
+%ADDTRIALS2LFP  Align an LFP channel to the behaviour clock and cut it into
+%   per-trial, per-ITI and whole-block segments.
 
 t = 1:1/srLfp:numel(channel);
 t = t-viconNlxLag;

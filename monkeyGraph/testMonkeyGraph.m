@@ -1,3 +1,6 @@
+%% testMonkeyGraph.m  -  demo of the monkey head/tail plotting helpers
+% Draws an animated top-down head glyph moving along a diagonal (plotMonkeyHead,
+% plotMonkTail, filledCircle). Needs no data.
 close all,
 clear
 clc

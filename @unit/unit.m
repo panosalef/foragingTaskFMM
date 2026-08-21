@@ -1,5 +1,11 @@
 classdef unit < handle
-    %%
+    %UNIT  One sorted unit (single or multi-unit) of a session.
+    %   Constructed from a Phy/Kilosort cluster (see getUnitsPhy): identity
+    %   (cluster, channel, electrode, brain area), mean waveform and width,
+    %   and spike times on the behaviour clock (Neuralynx time minus the
+    %   Vicon-Neuralynx lag). addTrials then cuts spikes into trials and ITIs.
+    %
+    %   See also getUnitsPhy, getViconNlxLag, addTrials2Unit, session.
     properties
         clusterId
         channelId

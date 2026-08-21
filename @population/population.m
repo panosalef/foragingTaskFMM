@@ -1,5 +1,8 @@
 classdef population < handle
-    %%
+    %POPULATION  Population-level summaries of a session (units or LFPs).
+    %   Placeholder container filled by session/addPopulation.
+    %
+    %   See also session, unit, lfp.
     properties
         units
         singleunit

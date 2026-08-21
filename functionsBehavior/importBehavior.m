@@ -1,19 +1,33 @@
-%   importBehavior(monkeyName,sessionID,stage)
-%   [block,trials,iti]=
 function  [block,trials,iti,stats] = importBehavior(prs)
-%% %%%%%%%%%%%%%Add prs as input
+%IMPORTBEHAVIOR  Build the behavioural data model of one session.
+%   [block, trials, iti, stats] = importBehavior(prs) loads the task files
+%   (.beh, one per block) and the Vicon motion-capture files of the session
+%   described by prs (see expParams), checks that they match, and returns:
+%
+%     block   continuous, unsegmented time series for the whole block at
+%             50 Hz: position, translational speed, head direction (earth and
+%             tilt frames), yaw/pitch/roll velocity, eye signals, distance to
+%             arena boundary (hexagonal and circular, egocentric), time base.
+%     trials  one element per trial (a trial is a push-to-push epoch):
+%               .events      tStart/tEnd, push and reward times, dispenser and
+%                            sync-pulse events
+%               .params      box pushed, reward schedules, cue reliability
+%                            (kappa), reward rates
+%               .continuous  the block variables cut to the trial, plus
+%                            schedule-aligned position and reward probability
+%     iti     the same continuous variables for the inter-trial intervals
+%     stats   per-block summary: pushes and rewards per box, push/reward
+%             fractions, distance travelled, mean velocity, good-trial index
+%
+%   Pipeline: read .beh files -> load Vicon blocks -> downsample to 50 Hz ->
+%   eye calibration -> marker interpolation and cleaning -> head and eye
+%   variables -> arena geometry -> segment into trials -> statistics.
+%
+%   Open items (behaviour unchanged until addressed): cross-check push times
+%   between Vicon and .beh; saccade detection; food-dispenser sessions.
+%
+%   See also expParams, readBehFiles, behavior/addTrials.
 
-%% things to be added
-% check push times from vicon and beh
-% preprocess eye movements
-% detect saccades
-% improve Readbehfiles
-% finish food dispenser part
-
-% clear,clc
-% monkeyName = 'Marco';
-% sessionID = 20211109;
-% stage = 'Training';
 %% Server Path Stuff
 %% Load all .beh files from /Matlab directory
 trialPaths = getTrialPaths(prs.behPath,'*.beh');

@@ -1,4 +1,6 @@
 function [trials,iti] = addTrials2Unit(spikeTimes,trialsBeh,blockBeh)
+%ADDTRIALS2UNIT  Cut a spike train into per-trial and per-ITI spike times
+%   using the behaviour's trial boundaries.
 
 tStart = arrayfun(@(x) x.events.tStart,trialsBeh);
 tEnd = arrayfun(@(x) x.events.tEnd,trialsBeh);

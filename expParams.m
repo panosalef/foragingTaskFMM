@@ -1,4 +1,20 @@
 function prs = expParams(monkeyName,sessionId)
+%EXPPARAMS  Session-specific paths and all analysis parameters for one session.
+%   prs = expParams(monkeyName, sessionId) looks the session up in
+%   monkeyInfoFile.m (recording stage, electrode configuration, brain areas)
+%   and returns a parameter struct used by every downstream import/analysis
+%   step: data paths (Vicon motion capture, .beh task files, eye calibration,
+%   raw and sorted neural data), task geometry, acquisition rates, and LFP
+%   settings.
+%
+%   Inputs
+%     monkeyName  char, e.g. 'Marco'
+%     sessionId   char, 'yyyymmdd' (addSessions passes a char; numbers are
+%                 converted upstream)
+%
+%   The data root comes from fmmDataRoot (override with FMM_DATA_ROOT).
+%
+%   See also fmmDataRoot, monkeyInfoFile, experiment/addSessions.
 
 %% session specific paramters
 monkeyInfoFile;
@@ -7,10 +23,11 @@ monkeyInfo = monkeyInfo(strcmp(monkeyName,{monkeyInfo.monkeyName}) & strcmp(sess
 prs.monkeyName = monkeyInfo.monkeyName;
 prs.sessionId = monkeyInfo.sessionId;
 prs.stage = monkeyInfo.stage;
-prs.viconPath = ['Y:\Monkeys\',prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Vicon\'];
-prs.behPath = ['Y:\Monkeys\',prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Matlab\'];
-prs.eyeCalibPath = ['Y:\Monkeys\',prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Eye Calibration\'];
-prs.neuralRawPath = ['Y:\Monkeys\',prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Neural Recordings\'];
+dataRoot = fmmDataRoot();
+prs.viconPath = [dataRoot,prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Vicon\'];
+prs.behPath = [dataRoot,prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Matlab\'];
+prs.eyeCalibPath = [dataRoot,prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Eye Calibration\'];
+prs.neuralRawPath = [dataRoot,prs.monkeyName,'\FMM\Data\',prs.stage,'\',prs.monkeyName,'_',prs.sessionId,'\Neural Recordings\'];
 prs.sortedPath = [prs.neuralRawPath,'\Sorted'];
 prs.electrodeTypeList = monkeyInfo.electrodeTypeList;
 prs.electrodeConfig = monkeyInfo.electrodeConfig;
