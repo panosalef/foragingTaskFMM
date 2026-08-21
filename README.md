@@ -3,7 +3,7 @@
 MATLAB object model and import pipeline that turns one session of the FMM foraging experiment
 (behaviour + motion capture + wireless neural recording) into an analysis-ready data structure.
 It is the infrastructure under the behavioural analyses in
-[foraging_policyIdentification](https://github.com/panosalef/foraging_policyIdentification) and the
+[foraging-allocation-dynamics](https://github.com/panosalef/foraging-allocation-dynamics) and the
 2026 preprint *Temporal Structure of Reward Availability and Sensory Uncertainty Modulate Allocation
 Dynamics in Naturalistic Foraging* ([doi:10.64898/2026.04.14.718537](https://doi.org/10.64898/2026.04.14.718537)).
 
