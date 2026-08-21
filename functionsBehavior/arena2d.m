@@ -1,4 +1,6 @@
 function  hex = arena2d(booleanPlot,boooleanBoxes)
+%ARENA2D  Hexagonal arena outline in the floor plane (mm); optionally plots it
+%   and the three reward boxes. Returns the vertex struct.
 
 rho = 1860; %h = 2100; %side and height of arena in mm
 theta = 0:60:360;

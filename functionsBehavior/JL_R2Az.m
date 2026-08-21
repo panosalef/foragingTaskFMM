@@ -1,4 +1,6 @@
 function Az = JL_R2Az(R)    
+%JL_R2AZ  Head-direction azimuth (deg) in the earth frame from a rotation matrix,
+%   after removing the head tilt.
 v = cross(R(:,3),[0 0 1]');
 if R(9)> 0
     Rf = (vrrotvec2mat([v; real(asin(norm(v)))]))*R(:,1);

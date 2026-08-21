@@ -1,4 +1,5 @@
 function plotUnfoldedArena
+%PLOTUNFOLDEDARENA  Draw the unfolded arena layout (floor, walls, ceiling) for overlays.
 
 rho = 1860; h = 2100; %side and height of arena in mm
 theta = 0:60:360;

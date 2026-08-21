@@ -1,4 +1,6 @@
 function continuousRewProb = getContinuousRewProb(timeVector,tPush,boxRewardRate)
+%GETCONTINUOUSREWPROB  Probability that a box is armed at each time, given its
+%   exponential reward rate and the push times that reset it: 1 - exp(-rate * t_since_push).
 % Compute continuous probability of reward availability
 timeVectorOut = timeVector;
 counter = 0;

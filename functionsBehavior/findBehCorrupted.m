@@ -1,4 +1,5 @@
 function  corruptionIdx = findBehCorrupted(trialPaths)
+%FINDBEHCORRUPTED  Logical index of readable, non-corrupted .beh files per session.
 
 % Find files
 nSessions = numel(trialPaths);

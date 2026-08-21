@@ -1,4 +1,9 @@
 function I = getArenaInt(front,centroid)
+%GETARENAINT  Intersection of the gaze/head ray with the arena.
+%   I = getArenaInt(front, centroid) casts a ray from the head centroid along
+%   the front vector and returns the 3-D point where it hits one of the six
+%   walls, the floor or the ceiling (NaN if none). Used for eye-in-arena and
+%   head-in-arena targets.
 
 
 [hexVertices,hexParams] = arena3d(0,0);

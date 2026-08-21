@@ -1,4 +1,5 @@
 function position1dArena = getArena1dPosition(X,Y,rangeX,rangeY,nX,nY)
+%GETARENA1DPOSITION  Linear cell index (1..nX*nY) of each X,Y sample on a grid.
 position1dArena = NaN(1,numel(X));
 
 x = linspace(rangeX(1),rangeX(2),nX);

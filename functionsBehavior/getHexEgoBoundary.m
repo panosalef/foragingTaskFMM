@@ -1,4 +1,8 @@
 function [rEgoB,thetaEgoB] = getHexEgoBoundary(position,headDirVec)
+%GETHEXEGOBOUNDARY  Egocentric distance and angle to the nearest arena wall.
+%   [rEgoB, thetaEgoB] = getHexEgoBoundary(position, headDirVec) for each
+%   sample: distance to the closest wall point and its angle relative to the
+%   head direction.
 
 theta = 0:360;
 r = getHexCevian(theta);

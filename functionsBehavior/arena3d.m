@@ -1,4 +1,7 @@
 function  [hexVertices,hexParams] = arena3d(booleanPlot,boooleanBoxes)
+%ARENA3D  3-D model of the hexagonal arena (side 1860 mm, height 2100 mm).
+%   [hexVertices, hexParams] = arena3d(doPlot, doBoxes) returns floor and
+%   ceiling vertices and the geometry parameters; optionally draws the arena.
 
 rho = 1860; h = 2100; %side and height of arena in mm
 theta = 0:60:360;

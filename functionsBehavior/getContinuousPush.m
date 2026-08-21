@@ -1,4 +1,5 @@
 function continuousPush = getContinuousPush(timeVector,tPush)
+%GETCONTINUOUSPUSH  Binary push train on a time grid (1 at the sample of each push).
 % Compute continuous probability of reward availability
 vectorOut = zeros(1,numel(timeVector));
 

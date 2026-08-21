@@ -1,4 +1,6 @@
 function electrodeId = mapChannel2Electrode(electrodeConfig)
+%MAPCHANNEL2ELECTRODE  Recording-channel to electrode-site map for a probe
+%   configuration ('linearprobe16/24/32', 'utah96', 'nform2x64', ...).
 %% Add Recording system in the future
 switch electrodeConfig
     case 'linearprobe16'

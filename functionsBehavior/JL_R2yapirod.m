@@ -1,4 +1,5 @@
 function ypr = JL_R2yapirod(R)
+%JL_R2YAPIROD  Yaw, pitch, roll (deg) from a rotation matrix R = Rz(y)Ry(p)Rx(r).
 
 % if size(R,3)>1
 %    ypr = zeros(size(R,1),3);

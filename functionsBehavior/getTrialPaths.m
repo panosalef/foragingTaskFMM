@@ -1,4 +1,5 @@
 function trialPaths = getTrialPaths(dataPath,fileExtension)
+%GETTRIALPATHS  Full paths of the files matching fileExtension in dataPath.
 
 initialDir = dir; % Loop over seleced sessions
 cd(dataPath);

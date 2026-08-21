@@ -1,4 +1,5 @@
 function idxOut = nanTracker(arrayIn,sr,timeWin)
+%NANTRACKER  Indices of NaN runs longer than timeWin seconds (sr = sampling rate).
 % This function finds the indices of NaN sequencies longer than the
 % timeWindow, sr is the sampling rate
 startNan = [];endNan = [];

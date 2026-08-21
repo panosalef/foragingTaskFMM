@@ -1,4 +1,6 @@
 function  arena2dPos = getArenaUnfolded(input)
+%GETARENAUNFOLDED  Map 3-D points on the arena surface to the unfolded 2-D
+%   layout (floor, six walls, ceiling) used for surface heat maps.
 
 [hexVertices,hexParams] = arena3d(0,0);
 arena2dPos = nan(size(input));

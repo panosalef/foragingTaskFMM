@@ -1,4 +1,7 @@
 function [occupancy,nanMask] = get2dOccup(X,Y,rangeX,rangeY,nX,nY,booleanSmooth)
+%GET2DOCCUP  2-D occupancy map (samples per cell) of X,Y on an nX x nY grid
+%   spanning rangeX, rangeY; optionally smoothed. Also returns the mask of
+%   cells with no data.
 
 x = linspace(rangeX(1),rangeX(2),nX);
 y = linspace(rangeY(1),rangeY(2),nY);

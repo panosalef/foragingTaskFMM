@@ -1,4 +1,5 @@
 function dCevian = getHexCevian(theta)
+%GETHEXCEVIAN  Distance from the arena centre to the hexagonal wall at angle theta (deg).
 % theta = abs(atan2d(y,x));
 
 [~,hexParams] = arena3d(0,0);

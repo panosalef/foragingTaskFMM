@@ -1,4 +1,5 @@
 function monkHandle = plotMonkeyHead(xMonk,yMonk,yawMonk,rMonk)
+%PLOTMONKEYHEAD  Top-down head glyph (face, ears, eyes) at (x, y) facing yawMonk degrees.
 
 monkColor1 = [101,67,33]./256 ;
 monkColor2 = [229, 211, 179]./256 ;

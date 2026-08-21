@@ -1,4 +1,5 @@
 function spkwidth = computeSpikeWidth(spkwf,Fs)
+%COMPUTESPIKEWIDTH  Trough-to-peak width (ms) of a mean spike waveform sampled at Fs.
 
 dt = 1/Fs; Nt = length(spkwf);
 t = 1e3*(dt:dt:Nt*dt); % time in ms

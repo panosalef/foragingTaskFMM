@@ -1,4 +1,7 @@
 function positionScheduleAlign = getScheduleAlignedPosition(position,schedules)
+%GETSCHEDULEALIGNEDPOSITION  Rotate arena coordinates so that boxes are in
+%   schedule order (fast/medium/slow at fixed positions) regardless of which
+%   physical box carried which schedule in the block.
 [~,sortIdx] = sort(schedules);
 trialId = str2double(strcat(num2str(sortIdx(1)),num2str(sortIdx(2)),num2str(sortIdx(3))));
 
